@@ -1,0 +1,141 @@
+@use '../utils' as *;
+@use '../globals' as *;
+
+
+
+// *******************************************[Hamburger styling]
+.header__hamburger{
+    @include breakpoint-min(769px){
+        display: none;
+    }
+    .hamburger::before{
+        content: "";
+        display: block;
+        background: #9e9aa7;
+        height: 3.2px;
+        width: 27px;
+        box-shadow: 0px 8.2px 0px #9e9aa7;
+        transition: 0.5s;
+        margin-top: rem(-8);
+    }
+    .hamburger::after{
+        content: "";
+        display: block;
+        background: #9e9aa7;
+        height: 3.2px;
+        width: 27px;
+        margin-top: rem(13);
+        transition: 0.5s;
+    }
+}
+
+// *******************************************[Hamburger animation]
+
+.open{
+    .hamburger{
+        outline: none;
+    }
+    .hamburger::before{
+        animation: anim 0.6s ease-in-out forwards;
+        // background-color: $DarkGray;
+    }
+    .hamburger::after{
+        // background: $DarkGray;
+        animation: anime 0.6s ease-in-out forwards;
+    }
+}
+
+.close{
+    .hamburger{
+        outline: none;
+    }
+    .hamburger::before{
+        animation: animRemove 0.6s ease-in-out forwards;
+    }
+    .hamburger::after{
+        animation: animeRemove 0.6s ease-in-out forwards;
+    }
+}
+
+
+
+// *******************************************[Mobile nav]
+.mobile__nav{
+    @include breakpoint(768px){
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: 0.6s ease-in-out;
+        background: $DarkViolet;
+        position: absolute;
+        top: 110px;
+        left: 6.5%;
+        width: 87%;
+        text-align: center;
+        @include flex(column,center,center);
+        padding: 0px 23px;
+        border-radius: 8px;
+        .login{
+            color: $White;
+            margin-top: 35px;
+            margin-left: 30px;
+            font-weight: 700;
+            font-size: 17px;
+        }
+        .sign-up{
+            margin-top: 25px;
+            margin-bottom: 38px;
+            width: 100%;
+            padding: 14px 0px;
+        }
+    }
+    .mobile-links{
+        @include breakpoint(768px){
+            text-align: center;
+            padding-top: 38px;
+            border-bottom: 1px solid $GrayishViolet;
+            width: 86%;
+            ul{
+                transform: translateX(-18%) skew(-16deg);
+                transition: 0.6s ease-in-out;
+                li{
+                    padding-bottom: 29px;
+                    transform: skew(16deg);
+                    transition: 0.6s ease-in-out;
+                    a{
+                        color: $White;
+                        font-weight: 700;
+                        font-size: 19px;
+                        opacity: 0;
+                        transform: translateY(-20px);
+                        transition: 0.6s ease-in-out;
+                        &:focus{
+                            color: $Cyan;
+                        }
+                    }
+                }
+            }
+        }
+        @include breakpoint-min(769px){
+            display: none;
+        }
+    }
+}
+
+.visible{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+    .mobile-links{
+        ul{
+            transform: translateX(0%) skew(0deg);
+            li{
+                transform: skew(0deg);
+                a{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+}

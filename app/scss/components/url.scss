@@ -1,0 +1,192 @@
+@use '../utils' as *;
+@use '../globals' as *;
+
+
+.url{
+    position: relative;
+    background: $Gray;
+    margin-top: rem(144);
+    padding-bottom: rem(205);
+    @include breakpoint(768px){
+        padding-bottom: rem(167);
+    }
+
+    &__container{
+        max-width: 1150px;
+        padding: 0 rem(20);
+        margin: 0 auto;
+    }
+    &__input{
+        transform: translateY(-83px);
+        background:url(/images/bg-shorten-desktop.svg), $DarkViolet;
+        display: flex;
+        padding: rem(52) rem(62);
+        border-radius: 10px;
+        margin-bottom: rem(-80);
+        @include breakpoint(768px){
+            flex-direction: column;
+            padding: 26px;
+            margin-bottom: -80px;
+            background:url(/images/bg-shorten-mobile.svg), $DarkViolet;
+            background-repeat: no-repeat;
+        }
+        .valid{
+            opacity: 0;
+            font-size: 0;
+            padding: 0;
+            visibility: hidden;
+            transition: 0.3s;
+            @include breakpoint-min(769px){
+                position: absolute;
+                bottom: rem(10);
+            }
+        }
+        .v{
+            padding-bottom: rem(10);
+            color: $Red;
+            font-size: rem(17);
+            visibility: visible;
+            opacity: 1;
+        }
+        .input-err{
+            border: 3px solid $Red;
+            &:focus{
+                border: 3px solid $Red;
+            }
+        }
+        input{
+            outline: none;
+            border-radius: 10px;  
+            width: 100%;
+            max-width: 771px; 
+            padding: rem(14.5) rem(31);
+            margin-right: rem(22);
+            font-size: rem(20.5);
+            font-family: inherit; 
+            border: 3px solid $White;
+            &:focus{
+                border: 3px solid $Cyan;
+            }
+            @include breakpoint(768px){
+                padding: rem(11) rem(15);
+                margin-bottom: rem(14);
+                font-size: rem(17);
+            }
+        }
+        button{
+            font-family: inherit; 
+            font-size: rem(19.5);
+            font-weight: 700;
+            padding: 0 rem(42);
+            white-space: nowrap;
+            margin-right: 0px;
+            border-radius: 10px;
+            background: $Cyan;
+            color: $White;
+            @include breakpoint(768px){
+                padding: rem(8) 0;
+            }
+            &:focus{
+                outline: 3px dotted $Cyan;
+                outline-offset: 0.25rem;
+            }
+        }
+    }
+    .links-sec{
+        margin: rem(25) 0;
+        background: $White;
+        @include flex(row,center,space-between);
+        padding: rem(15) rem(26);
+        border-radius: 8px;
+        position: relative;
+        @include breakpoint(768px){
+            display: block;
+        }
+
+        .link__input{
+            font-size: rem(19);
+            color: $VeryDarkViolet;
+            @include breakpoint(768px){
+                padding-bottom: rem(8);
+                border-bottom: 1px solid $VeryDarkBlue;
+            }
+        }
+
+        .link{
+            @extend %flex;
+            @include breakpoint(768px){
+                flex-direction: column;
+            }
+            .short-link{
+                color: $Cyan;
+                border: none;
+                outline: none;
+                width: 70%;
+                margin: rem(16) 0;
+                background: transparent;
+                font-size: rem(19);
+                pointer-events: none;
+                font-family: inherit;
+                margin-bottom: rem(15);
+                padding-bottom: 0;
+                &::selection{
+                    color: $DarkViolet;
+                    background: transparent;
+                }
+            }
+            .copy-btn{
+                font-family: inherit;
+                background: $Cyan;
+                color: $White;
+                font-weight: 700;
+                border-radius: 4px;
+                font-size: rem(16);
+                padding: rem(11) 0;
+                width: 102px;
+                margin-top: rem(12);
+                margin-bottom: rem(15);
+                @include breakpoint(768px){
+                    width: 100%;
+                    margin-left: 0px;
+                    padding: rem(13) 0;
+                }
+            }
+            .copied{
+                background: $DarkViolet;
+            }
+        }
+    }   
+
+    &__text{
+        text-align: center;
+        padding-top: rem(99);
+        @include breakpoint(768px){
+            padding-top: rem(85);
+        }
+        h2{
+            font-size: rem(37.8);
+            padding-bottom: rem(11);
+            @include breakpoint(768px){
+                font-size: rem(26.8);
+                padding-bottom: rem(19);
+            }
+            @include breakpoint(350px){
+                font-size: rem(24);
+            }
+        }
+        p{
+            word-spacing: 0px;
+            line-height: 1.75;
+            font-size: rem(18.1);
+            font-weight: 500;
+            max-width: 33rem;
+            margin: 0 auto;
+            @include breakpoint(768px){
+                font-size: rem(16.1);
+            }
+            @include breakpoint(350px){
+                font-size: rem(14.5);
+            }
+        }
+    }
+}  

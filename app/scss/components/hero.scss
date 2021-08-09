@@ -1,0 +1,112 @@
+@use '../utils' as *;
+@use '../globals' as *;
+
+
+.hero{
+    padding: 0 rem(20);
+    overflow: hidden;
+    padding-top: rem(17);
+    @include breakpoint(900px){
+        padding-bottom: rem(35);
+    }
+
+
+    &__content{
+        @extend %flex;
+        @include breakpoint(900px){
+            flex-direction: column-reverse;
+        }
+    }
+
+
+    &__text{
+        margin-top: rem(66);
+
+        @include breakpoint(900px){
+            margin-top: rem(12);
+            text-align: center;
+        }
+        h1{
+            font-size: rem(81);
+            word-spacing: 1px;
+            letter-spacing: -3.2px;
+            line-height: 1.13;
+            @include breakpoint(1200px){
+                font-size: rem(68);
+            }
+            @include breakpoint(1000px){
+                font-size: rem(55);
+            }
+            @include breakpoint(900px){
+                font-size: rem(45);
+                padding-bottom: rem(12);
+            }
+            @include breakpoint(585px){
+                max-width: 20rem;
+                margin: 0 auto;
+            }
+            @include breakpoint(335px){
+                font-size: rem(38);
+            }
+        }
+        p{
+            font-size: rem(22);
+            max-width: 34rem;
+            word-spacing: 0px;
+            letter-spacing: 0px;
+            font-weight: 500;
+            line-height: 1.65;
+            padding-bottom: rem(48);
+            @include breakpoint(1200px){
+                font-size: rem(18);
+                max-width: 30rem;
+            }
+            @include breakpoint(900px){
+                margin: 0 auto;
+            }
+            @include breakpoint(585px){
+                max-width: 20rem;
+            }
+            @include breakpoint(335px){
+                font-size: rem(15);
+            }
+        }
+    }
+
+
+
+    &__btn{
+        background: $Cyan;
+        padding: rem(14) rem(41);
+        word-spacing: -1px;
+        font-size: rem(20);
+        font-weight: 500;
+        color: #fff;
+        border-radius: 50px;
+        &:focus{
+            outline: rem(2.5) dotted $Cyan;
+            outline-offset:  0.35rem;
+        }
+        &:hover{
+            opacity: 0.6;
+        }
+    }
+
+
+
+    &__img{
+        margin-right: rem(-290);
+        @include breakpoint(1200px){
+            margin-right: rem(-260);
+        }
+        @include breakpoint(900px){
+            margin-left: rem(150);
+            img{
+                width: 80%;
+            }
+        }
+        @include breakpoint(768px){
+            margin-left: 0;
+        }
+    }
+}

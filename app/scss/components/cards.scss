@@ -1,0 +1,134 @@
+@use '../utils' as *;
+@use '../globals' as *;
+
+.url__cards{
+    @extend %flex;
+    margin-top: rem(98);
+    @include breakpoint(1000px){
+        flex-direction: column;
+        align-items: center;
+        margin-top: rem(90);
+    }
+
+    
+    .card{
+        background: $White;
+        max-width: 350px;
+        position: relative;
+        border-radius: 4px;
+        border: 3px solid $White;
+        transition: 0.2s;
+        &:hover{
+            cursor: pointer;
+            border: 3px dashed $Cyan;
+        }
+        @include breakpoint(1000px){
+            text-align: center;
+        }
+
+
+
+        &__img{
+            position: absolute;
+            top: rem(-43);
+            left: rem(32);
+            transition: 0.2s ease-in-out;
+            &:hover{
+                cursor: pointer;
+            }
+            @include breakpoint(1000px){
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .cardimg{
+                background: $DarkViolet;
+                height: 87px;
+                width: 87px;
+                border-radius: 50px;
+                position: relative;
+                img{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+            }    
+        }
+
+
+        &__text{
+            padding: 0 rem(31);
+            padding-top: rem(76);
+            padding-bottom: rem(37);
+            h3{
+                font-size: rem(22);
+                padding-bottom: rem(14);
+                @include breakpoint(350px){
+                    font-size: rem(19);
+                }
+            }
+            p{
+                font-size: rem(15);
+                line-height: 1.78;
+                word-spacing: 1px;
+                font-weight: 500;
+                @include breakpoint(350px){
+                    font-size: rem(14);
+                }
+            }
+        }
+    }
+
+
+    .ml{
+        margin-left: rem(30);
+        @include breakpoint(1000px){
+            margin-left: 0;
+            margin-top: rem(45);
+        }
+    }
+    
+
+    .card-1{
+        z-index: 10;
+    }
+
+
+    .card-2{
+        transform: translateY(43px);
+        position: relative;
+        &::before,
+        &::after{
+            content: "";
+            background: #2acfcf;
+            height: 8px;
+            width: 72px;
+            @include breakpoint(1000px){
+                width: 5px;
+                height: 70px;
+            }
+        }
+        &::before{
+            position: absolute;
+            top: rem(107);
+            left: rem(-76);
+            @include breakpoint(1000px){
+                display: none;
+            }
+        }
+        &::after{
+            position: absolute;
+            top: rem(107);
+            right: rem(-76);
+            @include breakpoint(1000px){
+                display: none;
+            }
+        }
+    }
+
+
+    .card-3{
+        transform: translateY(87px);
+        z-index: 20;
+    }
+}

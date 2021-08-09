@@ -1,0 +1,48 @@
+@use '../globals' as *;
+@use '../utils' as *;
+
+.boost{
+    background: $DarkViolet;
+    background-image: url(/images/bg-boost-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: rem(57) 0px;
+    @include breakpoint(768px){
+        padding: rem(98) 0;
+    }
+    &__text{
+        h4{
+            color: $White;
+            font-size: rem(38);
+            padding-bottom: rem(23);
+            @include breakpoint(768px){
+                font-size: rem(26);
+                padding-bottom: rem(16);
+            }
+            @include breakpoint(350px){
+                font-size: rem(24);
+            }
+        }
+        button{
+            background: $Cyan;
+            padding: rem(13) rem(41);
+            word-spacing: -1px;
+            font-size: rem(20);
+            font-weight: 700;
+            color: #fff;
+            border-radius: 50px;
+            font-family: inherit;
+            &:hover{
+                opacity: 0.9;
+            }
+            &:focus{
+                outline: rem(3) dotted $Cyan;
+                outline-offset:  0.35rem;
+            }
+            @include breakpoint(768px){
+                font-size: rem(20);
+            }
+        }
+    }
+}

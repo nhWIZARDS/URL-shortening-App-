@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="./app/css/main.css">
+  
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+<!-- **********************************************[Google Fonts]*********************************************************** -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- **********************************************[Header]*********************************************************** -->
+    <header class="header">
+        <div class="container">
+              <nav class="header__nav">
+                    <div class="header__links">
+                         <a href="#"><img src="/images/logo.svg" alt="Shortly-logo"></a>
+                         <div class="links">
+                              <ul>
+                                  <li><a href="#">Features</a></li>
+                                  <li><a href="#">Pricing</a></li>
+                                  <li><a href="#">Resources</a></li>
+                              </ul>
+                         </div>
+                    </div>
+                    <div class="header__hamburger">
+                        <div class="hamburger"></div>
+                    </div>
+                    <div class="header__btn mobile__nav">
+                          <div class="mobile-links">
+                              <ul>
+                                  <li><a href="#">Features</a></li>
+                                  <li><a href="#">Pricing</a></li>
+                                  <li><a href="#">Resources</a></li>
+                              </ul>
+                          </div>
+                          <a href="#" class="login">Login</a>
+                          <a href="#" class="sign-up">Sign Up</a>
+                    </div>
+              </nav>
+        </div>
+    </header>
+<!-- **********************************************[Hero]*********************************************************** -->
+    <section class="hero">
+        <div class="container">
+              <div class="hero__content">
+                    <div class="hero__text">
+                          <h1>More than just shorter links</h1>
+                          <p>Build your brand’s recognition and get detailed insights 
+                            on how your links are performing.</p>
+                          <a href="#" class="hero__btn">Get Started</a>  
+                    </div>
+                    <div class="hero__img">
+                          <img src="/images/illustration-working.svg" alt="illustration-working">
+                    </div>
+              </div>
+        </div>
+   </section>
+
+<!-- **********************************************[Url-section]*********************************************************** -->   
+    <section class="url">
+        <div class="url__container">
+            <div class="url__input">
+                      
+                  <input type="text" placeholder="Shorten a link here..." class="urlInput" aria-label="">
+                  <span class="valid"></span>
+                  <button class="btn" >Shorten It!</button>
+            </div>
+      <!-- *************************[Shorten-link]************************************** -->      
+
+            <div class="shorten-link"></div>
+
+      <!-- ************************[Loading animation]********************************** -->      
+            <div class="loading">
+                  <div class="loading__content">
+                        <div class="rot"></div>
+                        
+                  </div>
+                  <!-- <span class="s">Please Wait your link is liading</span> -->
+            </div>
+
+
+            <div class="url__text">
+                  <h2>Advanced Statistics</h2>
+                  <p> Track how your links are performing across the web with our 
+                    advanced statistics dashboard.</p>
+            </div>
+      <!-- ************************************[Cards]********************************** -->
+            <div class="url__cards">
+                  <div class="card card-1">
+                        <div class="card__img">
+                            <div class="cardimg">
+                                <img src="/images/icon-brand-recognition.svg" alt="brand-recognition">
+                            </div>
+                        </div>
+                        <div class="card__text card-1">
+                              <h3>Brand Recognition</h3>
+                              <p>Boost your brand recognition with each click. Generic links don’t 
+                                mean a thing. Branded links help instil confidence in your content.</p>
+                        </div>
+                  </div>
+                  <div class="card ml card-2 ">
+                        <div class="card__img">
+                            <div class="cardimg">
+                                <img src="/images/icon-detailed-records.svg" alt="detailed-records">
+                            </div>
+                        </div>
+                        <div class="card__text">
+                              <h3>Detailed Records</h3>
+                              <p>Gain insights into who is clicking your links. Knowing when and where 
+                                people engage with your content helps inform better decisions.</p>
+                        </div>
+                  </div>
+                  <div class="card ml card-3">
+                        <div class="card__img">
+                            <div class="cardimg">
+                                <img src="/images/icon-fully-customizable.svg" alt="fully-customizable">
+                            </div>
+                        </div>
+                        <div class="card__text">
+                              <h3>Fully Customizable</h3>
+                              <p>Improve brand awareness and content discoverability through customizable 
+                                links, supercharging audience engagement.</p>
+                        </div>
+                  </div>
+            </div>
+      </div>
+    </section>
+<!-- **********************************************[Boost]*********************************************************** -->
+    <section class="boost">
+              <div class="container">
+                    <div class="boost__text">
+                          <h4>Boost your links today</h4>
+                          <button>Get Started</button>
+                    </div>
+              </div>
+    </section>
+
+<!-- **********************************************[Footer]*********************************************************** -->    
+    <footer class="footer">
+             <div class="url__container">
+                   <div class="footer__content">
+                        <div class="footer__logo">
+                              <a href="#"><img src="/images/logo.svg" alt="footer-logo"></a> 
+                        </div>
+                        <div class="footer__grid">
+                              <div class="grid">
+                                    <p>Features</p>
+                                    <ul>
+                                          <li><a href="#">Link Shortening</a></li>
+                                          <li><a href="#">Branded Links</a></li>
+                                          <li><a href="#">Analytics</a></li>
+                                    </ul>
+                              </div>
+
+                              <div class="grid grid-ml">
+                                    <p>Resources</p>
+                                    <ul>  
+                                          <li><a href="#">Blog</a></li>
+                                          <li><a href="#">Developers</a></li>
+                                          <li><a href="#">Support</a></li>
+                                    </ul>
+                              </div>
+
+                              <div class="grid grid-ml-3">
+                                    <p>Company</p>
+                                    <ul>
+                                          <li><a href="#">About</a></li>
+                                          <li><a href="#">Our Team</a></li>
+                                          <li><a href="#">Careers</a></li>
+                                          <li><a href="#">Contact</a></li>
+                                    </ul>
+                              </div>
+                        </div>
+                        <div class="footer__social">
+                              <ul>
+                                    <li><a href="#"><img src="/images/icon-facebook.svg" alt="facebook-logo"></a></li>
+                                    <li><a href="#"><img src="/images/icon-twitter.svg" alt="twitter-logo"></a></li>
+                                    <li><a href="#"><img src="/images/icon-pinterest.svg" alt="pinterst-logo"></a></li>
+                                    <li><a href="#"><img src="/images/icon-instagram.svg" alt="instagram-logo"></a></li>
+                              </ul>
+                        </div>
+                   </div>
+             </div>
+    </footer>
+
+    <!-- **********************************************[JS]*********************************************************** -->
+    <script src="/app/js/script.js"></script>
+    <!-- ************************************************************************************************************* -->
+
+</body>
+</html>
+
+<!-- 
+Get Started
+
+Features
+
+Link Shortening
+Branded Links
+Analytics
+
+Resources
+
+Blog
+Developers
+Support
+
+Company
+
+About
+Our Team
+Careers
+Contact -->

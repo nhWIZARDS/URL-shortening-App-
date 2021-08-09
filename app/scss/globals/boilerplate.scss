@@ -1,0 +1,48 @@
+// @use '../utils' as *;
+// @use '../globals' as *;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+a,a:active,
+a:hover{
+    text-decoration: none;
+}
+
+
+li{
+    list-style: none;
+}
+
+button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.container{
+    max-width: 1106px;
+    // padding: 0 rem(20);
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3{
+    color: hsl(255, 11%, 22%);    
+}
+
+p{
+    color: hsl(257, 7%, 63%);
+}

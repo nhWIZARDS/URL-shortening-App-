@@ -1,0 +1,189 @@
+@use '../utils' as *;
+@use '../globals' as *;
+
+
+.header{
+    transition: all 0.3s ease-in-out;
+    padding: 0 rem(20);
+    @include breakpoint(768px){
+        position: relative;
+    }
+
+
+    &__nav{
+        padding: 55px 0px;
+        @include flex(row,center,space-between);
+        @include breakpoint(768px){
+            padding: rem(40) 0;
+        }
+    }
+
+
+    &__links{
+        @extend %flex;
+        a:focus{
+            outline: rem(3) dotted $Cyan;
+            outline-offset:  0.35rem;
+        }
+
+
+        .links{
+            ul{
+                @extend %flex;
+                margin-left: rem(44);
+                li{
+                    margin-top: rem(2);
+                    font-size: rem(15);
+                    font-weight: 700;
+                    a{
+                        color: $GrayishViolet;
+                        position: relative;
+                        &:hover{
+                            color: $VeryDarkViolet;
+                        }
+                        &::after{
+                            content: "";
+                            display: block;
+                            height: rem(4);
+                            width: 0%;
+                            background: $VeryDarkViolet;
+                            position: absolute;
+                            top: rem(24);
+                            visibility: hidden;
+                            transform: scaleX(1);
+                            transition: 0.3s ease-in-out;
+                        }
+                        &:hover::after{
+                            transform: scaleX(0);
+                            width: 100%;
+                            height: 0;
+                            visibility: visible;
+                        }
+                    }
+                    &:not(:first-child){
+                        margin-left: rem(31);
+                    }
+                }
+            }
+            @include breakpoint(768px){
+                display: none;
+            }
+        }
+    }
+
+
+
+    &__btn{
+        margin-top: rem(-14);
+        .login{
+            margin-right: rem(34);
+            font-weight: 700;
+            font-size: rem(15);
+            color: $GrayishViolet;
+            position: relative;
+            &:focus{
+                outline: rem(3) dotted $Cyan;
+                outline-offset:  0.35rem;
+            }
+            &::after{
+                content: "";
+                display: block;
+                height: rem(4);
+                width: 0%;
+                background: $Cyan;
+                position: absolute;
+                top: rem(24);
+                visibility: hidden;
+                transform: scaleX(1);
+                transition: 0.3s ease-in-out;
+            }
+            &:hover::after{
+                transform: scaleX(0);
+                width: 100%;
+                height: 0;
+                visibility: visible;
+            }
+        }
+        
+        .sign-up{
+            background: $Cyan;
+            padding: rem(10) rem(25);
+            border-radius: 50px;
+            font-size: rem(14.5);
+            font-weight: 700;
+            color: $White;
+            // margin-right: rem(-3);
+            &:focus{
+                outline: rem(3) dotted $Cyan;
+                outline-offset:  0.35rem;
+            }
+            &:hover{
+                opacity: 0.6;
+            }
+        }
+    }
+}
+
+// *******************************************[Sticky header]
+
+.add{
+    z-index: 100;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.116);
+    transform: translateY(-75px);
+
+    @include breakpoint(768px){
+        position: static;
+    }
+    .header__nav{
+        .header__links{
+            transform: translateY(45px);
+        }
+        .header__hamburger{
+            transform: translateY(45px);
+        }
+        .header__btn{
+            transform: translateY(45px);
+        }
+    }
+}
+
+// *******************************************[]
+
+.no-scroll{
+    overflow: hidden;
+}
+
+
+// ***************************************[loading anim]
+.loading{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: rem(15);
+    
+    .load{
+        display: block;
+
+    }
+    .load{
+        display: block;
+    }
+    &__content{
+        display: none;
+        .rot{
+            height: 4rem;
+            width: 4rem;
+            border-right: 0.1rem solid $Cyan;
+            border-radius: 50%;
+            animation: rotate 2s linear infinite forwards;
+            @include breakpoint(768px){
+                height: 3rem;
+                width: 3rem;
+            }
+        }
+    }
+}
+
