@@ -42,9 +42,9 @@ const getUrl = async () =>{
         getUrlLink(shortUrl1);
     }
     catch(err){
-        alert(`Link Cannot be generated ${err} Check your url and try again`)
-        valid.innerText = `${err}`
-        error()
+        alert(`Link Cannot be generated Check your url and try again`);
+        valid.innerText = `Check your url and try again`;
+        error();
     }
 }
 
